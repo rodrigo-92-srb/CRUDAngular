@@ -1,6 +1,6 @@
-import { CoursesService } from './../services/courses.service';
+import { CoursesService } from '../../services/courses.service';
 import { Component, OnInit } from '@angular/core';
-import { Course } from '../model/course';
+import { Course } from '../../model/course';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
@@ -40,6 +40,6 @@ export class CoursesComponent implements OnInit {
   }
 
   onAdd(){
-    this.router.navigate(['new'], {relativeTo: this.route});
+    this.router.navigate(['new'], { relativeTo: this.route });
   }
 }
