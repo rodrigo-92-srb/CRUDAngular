@@ -44,6 +44,10 @@ export class CoursesComponent implements OnInit {
   }
 
   onEdit(course: Course){
-    this.router.navigate(['edit', course._id], { relativeTo: this.route });
+    if (course && course.id) {
+      this.router.navigate(['edit', course.id], { relativeTo: this.route });
+    } else {
+      console.error("ID do curso está indefinido!");
+    }
   }
 }

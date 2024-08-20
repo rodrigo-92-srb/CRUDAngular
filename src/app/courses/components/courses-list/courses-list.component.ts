@@ -24,8 +24,12 @@ export class CoursesListComponent implements OnInit {
     this.add.emit(true);
   }
 
-  onEdit(course: Course){
-    this.edit.emit(course);
+  onEdit(course: Course) {
+    if (course && course.id) {
+      this.edit.emit(course);
+    } else {
+      console.error("Course or Course ID is missing:", course);
+    }
   }
 
 }
