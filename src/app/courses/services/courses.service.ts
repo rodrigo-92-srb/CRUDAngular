@@ -27,12 +27,9 @@ export class CoursesService {
   }
 
   save(record: Partial<Course>){
-    //console.log(record);
     if(record.id){
-    //  console.log('update');
       return this.update(record);
     }
-    // console.log('create');
     return this.create(record);
   }
 
@@ -41,6 +38,7 @@ export class CoursesService {
   }
 
   private update(record: Partial<Course>){
+    console.log('Atualizando curso com ID:', record.id);
     return this.httpClient.put<Course>(`${this.API}/${record.id}`, record).pipe(first());
   }
 }

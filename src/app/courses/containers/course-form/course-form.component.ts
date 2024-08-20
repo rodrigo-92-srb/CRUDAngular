@@ -14,7 +14,7 @@ import { Course } from '../../model/course';
 export class CourseFormComponent implements OnInit {
 
   form = this.formBuilder.group({
-    _id: [''],
+    id: [''],
     name: [''],
     category: ['']
   });
@@ -31,7 +31,7 @@ export class CourseFormComponent implements OnInit {
   ngOnInit(): void {
     const course: Course = this.route.snapshot.data['course'];
     this.form.setValue({
-      _id: course.id,
+      id: course.id,
       name: course.name,
       category: course.category
     });
